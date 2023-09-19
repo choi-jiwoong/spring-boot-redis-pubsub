@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-  redis:
+  redis-server:
     container_name: redis
     image: redis:latest
     ports:
@@ -10,11 +10,26 @@ services:
     container_name: pub-server
     build:
       context: ./spring-pub/
+    environment:
+      - REDIS_HOST=redis-server
+      - REDIS_PORT=6379
     ports:
       - 7010:8080
-  sub-server:
-    container_name: sub-server
+  sub-server1:
+    container_name: sub-server1
     build:
       context: ./spring-sub/.
+    environment:
+      - REDIS_HOST=redis-server
+      - REDIS_PORT=6379
     ports:
       - 7020:8080
+  sub-server2:
+    container_name: sub-server2
+    build:
+      context: ./spring-sub/.
+    environment:
+      - REDIS_HOST=redis-server
+      - REDIS_PORT=6379
+    ports:
+      - 7030:8080

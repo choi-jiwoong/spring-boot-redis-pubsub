@@ -17,18 +17,15 @@ import java.util.List;
 @RequiredArgsConstructor
 public class RedisSubService implements MessageListener {
 
-  public static List<String> messageList = new ArrayList<>();
   private final ObjectMapper mapper = new ObjectMapper();
 
   @Override
   public void onMessage(Message message, byte[] pattern) {
-    try {
-      SampleMessage msg = mapper.readValue(message.getBody(), SampleMessage.class);
-      messageList.add(message.toString());
 
-      System.out.println("받은 메시지 = " + message.toString());
-      System.out.println("chatMessage.getSender() = " + msg.getSender());
-      System.out.println("chatMessage.getContext() = " + msg.getContext());
+    try {
+      log.info(message.toString());
+      SampleMessage msg = mapper.readValue(message.getBody(), SampleMessage.class);
+      log.info("SampleMessage" + msg.toString());
     } catch (IOException e) {
       log.error("IOException", e);
     }

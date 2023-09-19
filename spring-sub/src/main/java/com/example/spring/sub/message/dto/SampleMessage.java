@@ -1,13 +1,16 @@
 package com.example.spring.sub.message.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.*;
 
-@Getter
+import java.io.Serializable;
+
+@Getter @Setter @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class SampleMessage {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class SampleMessage implements Serializable {
   private String sender;
   private String context;
 }
+

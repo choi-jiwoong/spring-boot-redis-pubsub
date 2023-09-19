@@ -1,10 +1,11 @@
 package com.example.spring.pub.message.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.*;
 
-@Getter
+import java.io.Serializable;
+
+@Getter @Setter @ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class SampleMessage {

@@ -1,0 +1,8 @@
+## Chat
+POST http://localhost:7010/api/chat
+Content-Type: application/json
+
+{
+  "sender" : "sender name",
+  "context" : "context text"
+}

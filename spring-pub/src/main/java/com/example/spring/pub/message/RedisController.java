@@ -13,7 +13,7 @@ public class RedisController {
 
   private final RedisPubService redisPubService;
 
-  @PostMapping("api/chat")
+  @PostMapping("/api/chat")
   public String pubSub(@RequestBody SampleMessage sampleMessage) {
     //메시지 보내기
     redisPubService.sendMessage(sampleMessage);
