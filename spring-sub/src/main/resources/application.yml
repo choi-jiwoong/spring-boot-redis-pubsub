@@ -1,3 +1,8 @@
+logging:
+    level:
+        root: INFO
+        org.springframework.web: DEBUG
+        io.lettuce: DEBUG
 spring:
   data:
     redis:

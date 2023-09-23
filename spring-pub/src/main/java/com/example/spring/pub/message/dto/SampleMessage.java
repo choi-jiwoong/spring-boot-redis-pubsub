@@ -1,9 +1,6 @@
 package com.example.spring.pub.message.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
-
-import java.io.Serializable;
 
 @Getter @Setter @ToString
 @NoArgsConstructor
